@@ -1,0 +1,220 @@
+/* === Fuente personalizada === */
+
+@font-face {
+    font-family: "Spooky";
+    src: url("../fonts/spooky.otf") format("opentype");
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+}
+/* === Paleta Halloween === */
+
+:root {
+    --bg: #050006;
+    --main: #ff7518;
+    /* Naranja calabaza */
+    --accent: #c21212;
+    /* Sangre */
+    --glow: rgba(0, 255, 100, 0.25);
+    /* Verde espectral */
+    --purple-light: #3a0ca3;
+    --purple-dark: #240046;
+    --text-secondary: #ffb46e;
+}
+/* === Reset y fondo === */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    background: url("../img/fondo.jpg") center center / cover no-repeat fixed, radial-gradient(circle at 50% 20%, rgba(120, 0, 160, 0.08), transparent 65%), linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.20) 100%);
+    background-blend-mode: overlay;
+    color: var(--main);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem 2rem 2rem;
+    overflow-x: hidden;
+    position: relative;
+}
+/* === Contenedor central === */
+
+.title-wrap {
+    text-align: center;
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    margin-top: 1vh;
+}
+/* === Título principal === */
+
+.halloween-title {
+    font-family: "Spooky", serif;
+    font-size: clamp(2.4rem, 8vw, 6.5rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.6rem;
+    display: inline-block;
+    transform: rotate(-1.5deg);
+    position: relative;
+    color: var(--main);
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 117, 24, 0.2), 0 0 20px rgba(255, 80, 20, 0.15), 0 0 30px rgba(0, 255, 100, 0.1);
+    opacity: 0;
+    /* 🔹 Invisible al inicio */
+}
+/* === Fade-in inicial del título === */
+
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95) rotate(-1.5deg);
+        filter: blur(6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(-1.5deg);
+        filter: blur(0);
+    }
+}
+/* === Flicker progresivo (brillo sube y baja) === */
+
+@keyframes title-flicker {
+    0% {
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 117, 24, 0.2), 0 0 20px rgba(255, 80, 20, 0.15), 0 0 30px var(--glow);
+    }
+    25% {
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 20px rgba(255, 117, 24, 0.35), 0 0 35px rgba(255, 80, 20, 0.25), 0 0 50px var(--glow);
+    }
+    50% {
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 30px rgba(255, 117, 24, 0.6), 0 0 55px rgba(255, 80, 20, 0.45), 0 0 80px var(--glow);
+    }
+    75% {
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 20px rgba(255, 117, 24, 0.35), 0 0 35px rgba(255, 80, 20, 0.25), 0 0 50px var(--glow);
+    }
+    100% {
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 117, 24, 0.2), 0 0 20px rgba(255, 80, 20, 0.15), 0 0 30px var(--glow);
+    }
+}
+/* === Solo inicia tras el clic (cuando body tiene .show-animations) === */
+
+.show-animations .halloween-title {
+    animation: fadeInTitle 2s ease-out forwards, title-flicker 5s ease-in-out infinite;
+    animation-delay: 2.5s;
+    /* Flicker inicia tras fade */
+}
+/* === Overlay de inicio de audio === */
+
+#audio-start {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 1);
+    color: var(--main);
+    font-family: "Spooky", serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    /* tamaño responsive */
+    z-index: 9999;
+    cursor: pointer;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 117, 24, 0.2), 0 0 20px rgba(255, 80, 20, 0.15), 0 0 20px rgba(0, 255, 100, 0.1);
+    animation: overlay-flicker 3s ease-in-out infinite;
+    text-align: center;
+    /* Centrado por defecto */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+#audio-start cite {
+    display: block !important;
+    /* Forzar nueva línea */
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    /* tamaño responsive */
+    text-align: right;
+    /* En pantallas grandes */
+    margin-top: 0.5rem;
+    color: var(--text-secondary);
+}
+/* === Subtítulo (frase de Halloween) === */
+
+.subtitle {
+    font-family: "Spooky", serif;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    color: var(--text-secondary);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(10px);
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 25px rgba(255, 117, 24, 0.5), 0 0 40px rgba(255, 100, 20, 0.35), 0 0 70px rgba(49, 201, 80, 0.25);
+    /* Verde espectral */
+}
+/* Animación de entrada */
+
+@keyframes subtitleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+        filter: blur(3px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+/* ✨ Activar solo después del clic (tras el fade del título) */
+
+.show-animations .subtitle {
+    animation: subtitleFadeIn 1.2s ease-out forwards;
+    animation-delay: 4s;
+    /* Empieza justo después del título */
+}
+/* === Animación suave del título === */
+
+@keyframes subtle-wobble {
+    0% {
+        transform: rotate(-1.5deg) translateY(0);
+    }
+    25% {
+        transform: rotate(-0.6deg) translateY(-1px);
+    }
+    50% {
+        transform: rotate(-2deg) translateY(0);
+    }
+    75% {
+        transform: rotate(-1.1deg) translateY(1px);
+    }
+    100% {
+        transform: rotate(-1.5deg) translateY(0);
+    }
+}
+/* === Accesibilidad contraste === */
+
+@media (prefers-contrast: high) {
+    .halloween-title {
+        color: #fff;
+        text-shadow: 0 6px 20px rgba(0, 0, 0, 1);
+    }
+    .halloween-title::after {
+        opacity: 0.6;
+    }
+    .subtitle {
+        color: #ffddb0;
+    }
+}
+@media (max-width: 600px) {
+    #audio-start {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        padding: 0.8rem;
+    }
+    #audio-start cite {
+        text-align: center;
+        margin-top: 0.3rem;
+    }
+}

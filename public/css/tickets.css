@@ -9,10 +9,33 @@
     padding-bottom: 3rem;
     opacity: 0;
 }
+/* 🎭 Nueva animación: Zoom In */
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.6) rotate(var(--rot, 0deg));
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.05) rotate(var(--rot, 0deg));
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(var(--rot, 0deg));
+        opacity: 1;
+    }
+}
 .show-animations .tickets-container {
-    animation: fadeInTitle 2s ease-out forwards, title-flicker 5s ease-in-out infinite;
-    animation-delay: 5s;
-    /* Flicker inicia tras fade */
+    animation: zoomIn 1.6s ease-out forwards, title-flicker 5s ease-in-out infinite;
+    animation-delay: 3s;
+    /* El flicker inicia después del zoom */
+}
+.show-animations .ticket {
+    animation: zoomIn 1s ease-out forwards;
+    animation-delay: calc(4s + (var(--i) * 0.15s));
+    /* 5s espera overlay, luego cada ticket +0.15s */
+    opacity: 0;
+    /* oculto antes de iniciar animación */
 }
 /* 🎟️ Ticket individual */
 
@@ -39,6 +62,7 @@
     overflow: hidden;
     opacity: 0.95;
     transform: rotate(var(--rot, 0deg));
+    transition: transform 0.35s ease-in-out; 
 }
 /* 🩸 Manchas de sangre */
 
@@ -71,7 +95,7 @@
 /* 💡 Hover: zoom + color sólido naranja */
 
 .ticket:hover {
-    transform: scale(1.1) rotate(calc(var(--rot) * 0.4));
+    transform: scale(1.1) rotate(0deg) !important;
     background: var(--main);
     /* #ff7518 */
     backdrop-filter: none;
@@ -79,26 +103,6 @@
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.9), inset 0 0 30px rgba(255, 117, 24, 0.25), 0 0 25px rgba(255, 117, 24, 0.4);
     opacity: 1;
     z-index: 10;
-}
-/* 🌀 Inclinación aleatoria */
-
-.ticket:nth-child(6n + 1) {
-    --rot: -3deg;
-}
-.ticket:nth-child(6n + 2) {
-    --rot: 2.5deg;
-}
-.ticket:nth-child(6n + 3) {
-    --rot: -2deg;
-}
-.ticket:nth-child(6n + 4) {
-    --rot: 1.5deg;
-}
-.ticket:nth-child(6n + 5) {
-    --rot: -1.5deg;
-}
-.ticket:nth-child(6n + 6) {
-    --rot: 3deg;
 }
 /* 📱 Responsive */
 

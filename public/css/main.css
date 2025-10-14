@@ -105,7 +105,7 @@ body {
 
 .show-animations .halloween-title {
     animation: fadeInTitle 2s ease-out forwards, title-flicker 5s ease-in-out infinite;
-    animation-delay: 1s;
+    animation-delay: 0.8s;
     /* Flicker inicia tras fade */
 }
 /* === Overlay de inicio de audio === */

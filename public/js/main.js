@@ -37,7 +37,7 @@ $(window).on("load", function() {
         audio.play().catch(() => {
             overlay.on("click", function() {
                 audio.play();
-                hideOverlay();
+                //hideOverlay();
                 // 🧟‍♂️ Solicitar pantalla completa tras el clic del usuario
                 const docEl = document.documentElement;
                 if (docEl.requestFullscreen) {
@@ -69,7 +69,7 @@ $(window).on("load", function() {
             const vista = vistas.includes(pelicula.id);
             const ticket = $(`
             <a href="${pelicula.enlace}?id=${pelicula.id}" 
-               class="ticket ${vista ? 'vista' : ''}">
+               class="ticket ${vista ? 'vista' : ''}" style="--i:${pelicula.id}">
               <span>${pelicula.nombre}</span>
             </a>
             `);
@@ -81,6 +81,23 @@ $(window).on("load", function() {
                 }
             });*/
             $("#cartelera").append(ticket);
+        });
+        // 🎲 Aleatorizar inclinación con !important forzado
+        $("#cartelera .ticket").each(function() {
+            const randomDeg = (Math.random() * 6 - 3).toFixed(1); // Entre -3° y +3°
+            // Inyectar estilo manteniendo el --i existente
+            const currentStyle = $(this).attr("style") || "";
+            $(this).attr("style", currentStyle + `; --rot:${randomDeg}deg !important`);
+        });
+    });
+    // === EFECTO DESVANECER CUANDO SE CLICKEA UN ENLACE ===
+    $(document).on("click", "a", function(e) {
+        const url = $(this).attr("href");
+        // Evita enlaces vacíos, anclas internas o # para no romper cosas
+        if (!url || url.startsWith("#") || $(this).attr("target") === "_blank") return;
+        e.preventDefault(); // Bloquea la navegación instantánea
+        $("body").fadeOut(1000, function() { // 🔥 Cambia 1000 por lo que quieras en ms
+            window.location.href = url; // Redirige después del fade
         });
     });
 });

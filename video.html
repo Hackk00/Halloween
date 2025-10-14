@@ -23,7 +23,6 @@
 </head>
 
 <body>
-
   <div class="title-wrap">
     <p class="subtitle">Luces fuera, el miedo comienza...</p>
 
@@ -33,62 +32,62 @@
       <!-- Reproductor principal -->
       <video id="player" controls>
         <source id="video-source" src="" type="video/mp4">
-        Tu navegador no soporta video HTML5 😢
-      </video>
+          Tu navegador no soporta video HTML5 😢
+        </video>
 
-      <!-- Botones -->
-      <div style="margin-top:1.5rem;">
-        <a href="#" id="mark-viewed" class="mark-btn">Marcar como vista</a>
-        <a href="index.html" class="back-btn">Volver a la cartelera</a>
+        <!-- Botones -->
+        <div style="margin-top:1.5rem;">
+          <a href="#" id="mark-viewed" class="mark-btn">Marcar como vista</a>
+          <a href="index.html" class="back-btn">Volver a la cartelera</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script>
-    $(function() {
-      const params = new URLSearchParams(window.location.search);
-      const id = parseInt(params.get("id"));
-      const container = $("#player-container");
-      const vistas = JSON.parse(localStorage.getItem("peliculasVistas")) || {};
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function() {
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get("id"));
+        const container = $("#player-container");
+        const vistas = JSON.parse(localStorage.getItem("peliculasVistas")) || {};
 
       // Retrasar la aparición del reproductor
-      setTimeout(() => {
-        container.addClass("visible");
-      }, 4000);
+        setTimeout(() => {
+          container.addClass("visible");
+        }, 4000);
 
       // Cargar la base de datos
-      $.getJSON("bd.json", function(data) {
-        const pelicula = data.peliculas.find(p => p.id === id);
+        $.getJSON("bd.json", function(data) {
+          const pelicula = data.peliculas.find(p => p.id === id);
 
-        if (pelicula) {
-          $("#video-title").text(pelicula.nombre);
+          if (pelicula) {
+            $("#video-title").text(pelicula.nombre);
           // Cambia la ruta por la ubicación real de tus videos
-          $("#video-source").attr("src", `videos/${pelicula.id}.mp4`);
-          $("#player")[0].load();
+            $("#video-source").attr("src", `videos/${pelicula.id}.mp4`);
+            $("#player")[0].load();
 
           // Estado "vista"
-          if (vistas[id]) {
-            $("#mark-viewed").addClass("vista").text("🎃 Vista");
-          }
+            if (vistas[id]) {
+              $("#mark-viewed").addClass("vista").text("🎃 Vista");
+            }
 
           // Marcar como vista
-          $("#mark-viewed").on("click", function(e) {
-            e.preventDefault();
-            if (!$(this).hasClass("vista")) {
-              vistas[id] = true;
-              localStorage.setItem("peliculasVistas", JSON.stringify(vistas));
-              $(this).addClass("vista").text("🎃 Vista");
-            }
-          });
-        } else {
-          $("#video-title").text("Película no encontrada 😢");
-          $("#mark-viewed").hide();
-        }
-      });
+            $("#mark-viewed").on("click", function(e) {
+              e.preventDefault();
+              if (!$(this).hasClass("vista")) {
+                vistas[id] = true;
+                localStorage.setItem("peliculasVistas", JSON.stringify(vistas));
+                $(this).addClass("vista").text("🎃 Vista");
+              }
+            });
+          } else {
+            $("#video-title").text("Película no encontrada 😢");
+            $("#mark-viewed").hide();
+          }
+        });
 
-      $("body").addClass("show-animations");
-    });
-  </script>
-</body>
-</html>
+        $("body").addClass("show-animations");
+      });
+    </script>
+  </body>
+  </html>

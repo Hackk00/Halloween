@@ -1,0 +1,90 @@
+.player-container {
+  max-width: 1000px;
+  width: 90%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--main);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 0 25px rgba(255, 117, 24, 0.25);
+  text-align: center;
+  margin-top: 2rem;
+
+  /* 🔹 Oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+
+  /* 🔹 Animación que inicia 3s después */
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 4s;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  outline: none;
+  background-color: black;
+}
+
+.video-title {
+  font-family: "Spooky", serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  color: var(--main);
+  text-shadow: 0 4px 15px rgba(255, 117, 24, 0.4);
+  letter-spacing: 0.05em;
+
+  /* 🔹 Oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 3s;
+}
+
+.back-btn, .mark-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: "Spooky", serif;
+  border: 2px solid var(--main);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  background: transparent;
+
+  /* 🔹 Oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 3s;
+}
+
+.back-btn:hover, .mark-btn:hover {
+  background: var(--main);
+  color: #000;
+  box-shadow: 0 0 15px var(--glow);
+}
+
+.mark-btn.vista {
+  background: var(--main);
+  color: #000;
+  box-shadow: 0 0 15px var(--glow);
+  cursor: default;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}

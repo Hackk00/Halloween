@@ -1,159 +1,198 @@
 {
-  "frases_terror": [
-    {
-      "frase": "¿No querrías ser... extraordinario?",
-      "pelicula": "La Sustancia",
-      "emoji": "🧪"
-    },
-    {
-      "frase": "No tengas miedo de los monstruos, búscalos bien y encontrarás a alguien común",
-      "pelicula": "Paranorman",
-      "emoji": "👹"
-    },
-    {
-      "frase": "Los muertos nunca mueren, solo cambian",
-      "pelicula": "Paranorman",
-      "emoji": "💀"
-    },
-    {
-      "frase": "Grabar a los muertos no los va a hacer más famosos",
-      "pelicula": "Paranorman",
-      "emoji": "📹"
-    },
-    {
-      "frase": "¡Habla con los muertos!",
-      "pelicula": "El Teléfono Negro",
-      "emoji": "☎️"
-    },
-    {
-      "frase": "Los muertos nunca mienten",
-      "pelicula": "El Teléfono Negro",
-      "emoji": "🖤"
-    },
-    {
-      "frase": "Cuidado con la mujer del muñeco",
-      "pelicula": "Dead Silence",
-      "emoji": "🎎"
-    },
-    {
-      "frase": "Cuidado con la mirada de Mary Shaw",
-      "pelicula": "Dead Silence",
-      "emoji": "👀"
-    },
-    {
-      "frase": "¡El poder del demonio se va de aquí!",
-      "pelicula": "El Exorcista",
-      "emoji": "✝️"
-    },
-    {
-      "frase": "Qué excelente día para un exorcismo",
-      "pelicula": "El Exorcista",
-      "emoji": "😈"
-    },
-    {
-      "frase": "¡Aquí está Johnny!",
-      "pelicula": "El Resplandor",
-      "emoji": "🪓"
-    },
-    {
-      "frase": "¡Quédate conmigo... para siempre!",
-      "pelicula": "El Resplandor",
-      "emoji": "❄️"
-    },
-    {
-      "frase": "Juega con nosotros, Danny",
-      "pelicula": "El Resplandor",
-      "emoji": "🚲"
-    },
-    {
-      "frase": "Tengo el mundo en mi plato",
-      "pelicula": "Hannibal",
-      "emoji": "🍷"
-    },
-    {
-      "frase": "Siempre le digo la verdad a mis amigos",
-      "pelicula": "Hannibal",
-      "emoji": "🍽️"
-    },
-    {
-      "frase": "El matrimonio puede ser un infierno",
-      "pelicula": "El Cadáver de la Novia",
-      "emoji": "💔"
-    },
-    {
-      "frase": "Con esta mano, te levantaré de tus penas",
-      "pelicula": "El Cadáver de la Novia",
-      "emoji": "🖤"
-    },
-    {
-      "frase": "¿Qué es esto? ¡Esto es Halloween!",
-      "pelicula": "El Extraño Mundo de Jack",
-      "emoji": "🎃"
-    },
-    {
-      "frase": "En mi pueblo no celebramos la Navidad",
-      "pelicula": "El Extraño Mundo de Jack",
-      "emoji": "🎄"
-    },
-    {
-      "frase": "Soy el Rey Calabaza",
-      "pelicula": "El Extraño Mundo de Jack",
-      "emoji": "👑"
-    },
-    {
-      "frase": "¡Tic-tac-toe en tu cara!",
-      "pelicula": "¿Y dónde está el fantasma?",
-      "emoji": "🔪"
-    },
-    {
-      "frase": "¡Mi perro es un panqueque!",
-      "pelicula": "¿Y dónde está el fantasma?",
-      "emoji": "🐶"
-    },
-    {
-      "frase": "No me duele... !Me quema, me lastima!",
-      "pelicula": "¿Y dónde está el fantasma?",
-      "emoji": "🔥"
-    },
-    {
-      "frase": "Esta casa está viva",
-      "pelicula": "Monster House",
-      "emoji": "🏚️"
-    },
-    {
-      "frase": "No es una casa, es un monstruo",
-      "pelicula": "Monster House",
-      "emoji": "👹"
-    },
-    {
-      "frase": "Los niños y las casas tienen algo en común: ambos crecen",
-      "pelicula": "Monster House",
-      "emoji": "👦🏠"
-    },
-    {
-      "frase": "Locura es la herencia de la familia",
-      "pelicula": "Los Locos Addams",
-      "emoji": "👨‍👩‍👧‍👦"
-    },
-    {
-      "frase": "Somos horribles y nos encanta",
-      "pelicula": "Los Locos Addams",
-      "emoji": "💀"
-    },
-    {
-      "frase": "¿Qué cosa tan gloriosamente macabra!",
-      "pelicula": "Los Locos Addams",
-      "emoji": "🕷️"
-    },
-    {
-      "frase": "La normalidad es una ilusión",
-      "pelicula": "Los Locos Addams",
-      "emoji": "🎭"
-    },
-    {
-      "frase": "La familia es lo primero, incluso antes que la maldad",
-      "pelicula": "Los Locos Addams",
-      "emoji": "❤️"
-    }
-  ]
+  "frases_terror": [{
+    "frase": "¿No querrías ser... extraordinario?",
+    "pelicula": "La Sustancia",
+    "emoji": "🧪"
+  }, {
+    "frase": "No tengas miedo de los monstruos, búscalos bien y encontrarás a alguien común",
+    "pelicula": "Paranorman",
+    "emoji": "👹"
+  }, {
+    "frase": "Los muertos nunca mueren, solo cambian",
+    "pelicula": "Paranorman",
+    "emoji": "💀"
+  }, {
+    "frase": "Grabar a los muertos no los va a hacer más famosos",
+    "pelicula": "Paranorman",
+    "emoji": "📹"
+  }, {
+    "frase": "¡Habla con los muertos!",
+    "pelicula": "El Teléfono Negro",
+    "emoji": "☎️"
+  }, {
+    "frase": "Los muertos nunca mienten",
+    "pelicula": "El Teléfono Negro",
+    "emoji": "🖤"
+  }, {
+    "frase": "Cuidado con la mujer del muñeco",
+    "pelicula": "Dead Silence",
+    "emoji": "🎎"
+  }, {
+    "frase": "Cuidado con la mirada de Mary Shaw",
+    "pelicula": "Dead Silence",
+    "emoji": "👀"
+  }, {
+    "frase": "¡El poder del demonio se va de aquí!",
+    "pelicula": "El Exorcista",
+    "emoji": "✝️"
+  }, {
+    "frase": "Qué excelente día para un exorcismo",
+    "pelicula": "El Exorcista",
+    "emoji": "😈"
+  }, {
+    "frase": "¡Aquí está Johnny!",
+    "pelicula": "El Resplandor",
+    "emoji": "🪓"
+  }, {
+    "frase": "¡Quédate conmigo... para siempre!",
+    "pelicula": "El Resplandor",
+    "emoji": "❄️"
+  }, {
+    "frase": "Juega con nosotros, Danny",
+    "pelicula": "El Resplandor",
+    "emoji": "🚲"
+  }, {
+    "frase": "Tengo el mundo en mi plato",
+    "pelicula": "Hannibal",
+    "emoji": "🍷"
+  }, {
+    "frase": "Siempre le digo la verdad a mis amigos",
+    "pelicula": "Hannibal",
+    "emoji": "🍽️"
+  }, {
+    "frase": "El matrimonio puede ser un infierno",
+    "pelicula": "El Cadáver de la Novia",
+    "emoji": "💔"
+  }, {
+    "frase": "Con esta mano, te levantaré de tus penas",
+    "pelicula": "El Cadáver de la Novia",
+    "emoji": "🖤"
+  }, {
+    "frase": "¿Qué es esto? ¡Esto es Halloween!",
+    "pelicula": "El Extraño Mundo de Jack",
+    "emoji": "🎃"
+  }, {
+    "frase": "En mi pueblo no celebramos la Navidad",
+    "pelicula": "El Extraño Mundo de Jack",
+    "emoji": "🎄"
+  }, {
+    "frase": "Soy el Rey Calabaza",
+    "pelicula": "El Extraño Mundo de Jack",
+    "emoji": "👑"
+  }, {
+    "frase": "¡Tic-tac-toe en tu cara!",
+    "pelicula": "¿Y dónde está el fantasma?",
+    "emoji": "🔪"
+  }, {
+    "frase": "¡Mi perro es un panqueque!",
+    "pelicula": "¿Y dónde está el fantasma?",
+    "emoji": "🐶"
+  }, {
+    "frase": "No me duele... ¡Me quema, me lastima!",
+    "pelicula": "¿Y dónde está el fantasma?",
+    "emoji": "🔥"
+  }, {
+    "frase": "Esta casa está viva",
+    "pelicula": "Monster House",
+    "emoji": "🏚️"
+  }, {
+    "frase": "No es una casa, es un monstruo",
+    "pelicula": "Monster House",
+    "emoji": "👹"
+  }, {
+    "frase": "Los niños y las casas tienen algo en común: ambos crecen",
+    "pelicula": "Monster House",
+    "emoji": "👦🏠"
+  }, {
+    "frase": "Locura es la herencia de la familia",
+    "pelicula": "Los Locos Addams",
+    "emoji": "👨‍👩‍👧‍👦"
+  }, {
+    "frase": "Somos horribles y nos encanta",
+    "pelicula": "Los Locos Addams",
+    "emoji": "💀"
+  }, {
+    "frase": "¿Qué cosa tan gloriosamente macabra!",
+    "pelicula": "Los Locos Addams",
+    "emoji": "🕷️"
+  }, {
+    "frase": "La normalidad es una ilusión",
+    "pelicula": "Los Locos Addams",
+    "emoji": "🎭"
+  }, {
+    "frase": "La familia es lo primero, incluso antes que la maldad",
+    "pelicula": "Los Locos Addams",
+    "emoji": "❤️"
+  }],
+  "peliculas": [{
+    "id": 1,
+    "nombre": "La Sustancia",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 2,
+    "nombre": "Paranorman",
+    "enlace": "video.html",
+    "estado": 1
+  }, {
+    "id": 3,
+    "nombre": "El Teléfono Negro",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 4,
+    "nombre": "Dead Silence",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 5,
+    "nombre": "El Exorcista",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 6,
+    "nombre": "El Resplandor",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 7,
+    "nombre": "Hannibal",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 8,
+    "nombre": "Together",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 9,
+    "nombre": "El Cadáver de la Novia",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 10,
+    "nombre": "El Extraño Mundo de Jack",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 11,
+    "nombre": "¿Y dónde está el fantasma?",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 12,
+    "nombre": "¿Y dónde está el fantasma? 2",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 13,
+    "nombre": "Monster House",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 14,
+    "nombre": "Los Locos Addams",
+    "enlace": "video.html",
+    "estado": 0
+  }]
 }

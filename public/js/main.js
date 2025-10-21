@@ -1,7 +1,7 @@
 $(window).on("load", function() {
     const audio = $("#halloween-audio")[0];
     const overlay = $("#audio-start");
-    audio.volume = 0.6;
+    audio.volume = 0.1;
     // === Función para ocultar overlay ===
     function hideOverlay() {
         overlay.fadeOut(2000, function() {
@@ -10,21 +10,32 @@ $(window).on("load", function() {
         });
     }
     // === Mostrar frase con fadeIn/fadeOut ===
-    $.getJSON('bd.json', function(data) {
+    let frases_usadas = [];
+    $.getJSON("bd.json", function(data) {
         const frases_terror = data.frases_terror;
         if (!frases_terror || frases_terror.length === 0) {
-            overlay.html('No se pudieron cargar las frases 😢');
+            overlay.html("No se pudieron cargar las frases 😢");
             hideOverlay();
             return;
         }
-        const randomIndex = Math.floor(Math.random() * frases_terror.length);
-        const fraseObj = frases_terror[randomIndex];
+        // --- Selección aleatoria no repetitiva ---
+        if (frases_usadas.length === frases_terror.length) {
+            frases_usadas = []; // reiniciar cuando se usen todas
+        }
+        let fraseObj;
+        do {
+            const index = Math.floor(Math.random() * frases_terror.length);
+            fraseObj = frases_terror[index];
+        } while (frases_usadas.includes(fraseObj.id));
+        frases_usadas.push(fraseObj.id);
+        // --- Mostrar la frase ---
         overlay.html(`
-            <div id="frase-contenido" style="display:none;">
-                ${fraseObj.frase} ${fraseObj.emoji}
-                <cite>${fraseObj.pelicula}</cite>
-            </div>
+        <div id="frase-contenido" style="display:none;">
+            ${fraseObj.frase} ${fraseObj.emoji}
+            <cite>${fraseObj.pelicula}</cite>
+        </div>
         `);
+        // --- Animaciones ---
         setTimeout(() => {
             $("#frase-contenido").fadeIn(1000, function() {
                 setTimeout(() => {
@@ -34,58 +45,50 @@ $(window).on("load", function() {
                 }, 2000);
             });
         }, 2000);
+        // --- Intentar reproducir automáticamente ---
         audio.play().catch(() => {
             overlay.on("click", function() {
                 audio.play();
-                //hideOverlay();
-                // 🧟‍♂️ Solicitar pantalla completa tras el clic del usuario
+                // Pantalla completa tras interacción
                 const docEl = document.documentElement;
                 if (docEl.requestFullscreen) {
                     docEl.requestFullscreen();
-                } else if (docEl.webkitRequestFullscreen) { // Safari
+                } else if (docEl.webkitRequestFullscreen) {
                     docEl.webkitRequestFullscreen();
-                } else if (docEl.msRequestFullscreen) { // IE/Edge antiguo
+                } else if (docEl.msRequestFullscreen) {
                     docEl.msRequestFullscreen();
                 }
             });
         });
     });
-    // === CARGAR PELÍCULAS Y MARCAR VISTAS ===
+    // === CARGAR PELÍCULAS Y LEER VISTAS DESDE localStorage ===
     $.getJSON("bd.json", function(data) {
         const peliculas = data.peliculas;
-        // 🧱 Asegurar que vistas sea siempre un array válido
-        let vistas = [];
+        // Cargar objeto de vistas
+        let vistas = {};
         try {
             const stored = JSON.parse(localStorage.getItem("peliculasVistas"));
-            if (Array.isArray(stored)) {
+            if (stored && typeof stored === "object") {
                 vistas = stored;
             }
         } catch (e) {
-            vistas = [];
+            vistas = {};
         }
         // Vaciar cartelera antes de volver a llenarla
         $("#cartelera").empty();
-        peliculas.forEach(pelicula => {
-            const vista = vistas.includes(pelicula.id);
+        peliculas.forEach((pelicula) => {
+            const vista = vistas[pelicula.id] === true; // ← Objeto {id: true}
             const ticket = $(`
             <a href="${pelicula.enlace}?id=${pelicula.id}" 
-               class="ticket ${vista ? 'vista' : ''}" style="--i:${pelicula.id}">
+               class="ticket ${vista ? "vista" : ""}" style="--i:${pelicula.id}">
               <span>${pelicula.nombre}</span>
             </a>
             `);
-            // Evento de clic: marcar como vista
-            /*ticket.on("click", function() {
-                if (!vistas.includes(pelicula.id)) {
-                    vistas.push(pelicula.id);
-                    localStorage.setItem("peliculasVistas", JSON.stringify(vistas));
-                }
-            });*/
             $("#cartelera").append(ticket);
         });
-        // 🎲 Aleatorizar inclinación con !important forzado
+        // 🎲 Aleatorizar inclinación con !important
         $("#cartelera .ticket").each(function() {
-            const randomDeg = (Math.random() * 6 - 3).toFixed(1); // Entre -3° y +3°
-            // Inyectar estilo manteniendo el --i existente
+            const randomDeg = (Math.random() * 6 - 3).toFixed(1);
             const currentStyle = $(this).attr("style") || "";
             $(this).attr("style", currentStyle + `; --rot:${randomDeg}deg !important`);
         });
@@ -93,10 +96,10 @@ $(window).on("load", function() {
     // === EFECTO DESVANECER CUANDO SE CLICKEA UN ENLACE ===
     $(document).on("click", "a", function(e) {
         const url = $(this).attr("href");
-        // Evita enlaces vacíos, anclas internas o # para no romper cosas
+        // Evitar roturas con enlaces especiales
         if (!url || url.startsWith("#") || $(this).attr("target") === "_blank") return;
         e.preventDefault(); // Bloquea la navegación instantánea
-        $("body").fadeOut(1000, function() { // 🔥 Cambia 1000 por lo que quieras en ms
+        $("body").fadeOut(1000, function() {
             window.location.href = url; // Redirige después del fade
         });
     });

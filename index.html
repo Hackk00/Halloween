@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dos cineastas y medio — Invitación de Halloween</title>
+  <title>Dos cineastas y medio</title>
   <link rel="stylesheet" href="public/css/main.css">
   <link rel="stylesheet" href="public/css/tickets.css">
+  <link rel="stylesheet" href="public/css/lista.css">
 </head>
 
 <body>
 
-<div id="audio-start">
-  <div id="frase-contenido"></div>
-</div>
+  <div id="audio-start">
+    <div id="frase-contenido"></div>
+  </div>
 
-<audio id="halloween-audio" src="public/music/index.mp3" loop preload="auto"></audio>
+  <audio id="halloween-audio" src="public/music/index.mp3" loop preload="auto"></audio>
 
   <main class="title-wrap" role="main" aria-labelledby="titulo-halloween">
     <!-- Título -->
@@ -28,9 +29,17 @@
     <!-- 🎬 Tickets de cine viejos -->
     <section id="cartelera" class="tickets-container">
     </section>
+
+    
+    <!-- 🏆 Lista flotante de mejores películas -->
+    <div id="top-peliculas" class="top-flotante">
+      <h3>El Altar del S&eacute;ptimo Horror</h3>
+      <ul id="lista-top"></ul>
+    </div>
   </main>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="public/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="public/js/main.js"></script>
+  <script src="public/js/lista.js"></script>
 </body>
 </html>

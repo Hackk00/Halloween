@@ -1,4 +1,13 @@
 .player-container {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+.player-container.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.player-container {
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
   border: 2px solid var(--main);
@@ -7,16 +16,13 @@
   box-shadow: 0 0 25px rgba(255, 117, 24, 0.25);
   text-align: center;
   margin-top: 2rem;
-
   /* 🔹 Oculto por defecto */
   opacity: 0;
   visibility: hidden;
-
   /* 🔹 Animación que inicia 3s después */
   animation: zoomIn 1.5s ease forwards;
   animation-delay: 3.5s;
 }
-
 video {
   width: 100%;
   height: auto;
@@ -24,7 +30,6 @@ video {
   outline: none;
   background-color: black;
 }
-
 .video-title {
   font-family: "Spooky", serif;
   font-size: clamp(1.8rem, 5vw, 3rem);
@@ -32,15 +37,12 @@ video {
   color: var(--main);
   text-shadow: 0 4px 15px rgba(255, 117, 24, 0.4);
   letter-spacing: 0.05em;
-
   /* 🔹 Oculto por defecto */
   opacity: 0;
   visibility: hidden;
-
   animation: zoomIn 2s ease forwards;
   animation-delay: 2s;
 }
-
 .back-btn, .mark-btn {
   display: inline-block;
   margin-top: 1.5rem;
@@ -53,27 +55,63 @@ video {
   transition: 0.3s;
   cursor: pointer;
   background: transparent;
-
   /* 🔹 Oculto por defecto */
   opacity: 0;
   visibility: hidden;
-
   animation: fadeIn 1.5s ease forwards;
   animation-delay: 3s;
 }
-
 .back-btn:hover, .mark-btn:hover {
   background: var(--main);
   color: #000;
   box-shadow: 0 0 15px var(--glow);
 }
-
 .mark-btn.vista {
   background: var(--main);
   color: #000;
   box-shadow: 0 0 15px var(--glow);
   cursor: default;
 }
+/*------------------VOTACIONES-----------------------*/
+
+.ratings-container {
+  margin-top: 2%;
+}
+.rating {
+  direction: rtl;
+  display: inline-flex;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.rating img {
+  width: 35px;
+  opacity: 0.4;
+  filter: grayscale(100%);
+  transition: opacity 0.2s, transform 0.2s, filter 0.2s;
+}
+
+/* Hover antes de votar */
+.rating img:hover,
+.rating img:hover ~ img {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Solo las seleccionadas quedan encendidas */
+.rating .selected {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* Estado bloqueado tras votar */
+.rating.disabled img {
+  cursor: default;
+  transform: none !important;
+  pointer-events: none;
+}
+/*-----------------------------------------*/
 
 @keyframes fadeIn {
   0% {
@@ -87,19 +125,18 @@ video {
     visibility: visible;
   }
 }
-
 @keyframes zoomIn {
-    0% {
-        transform: scale(0.6) rotate(var(--rot, 0deg));
-        opacity: 0;
-    }
-    60% {
-        transform: scale(1.05) rotate(var(--rot, 0deg));
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1) rotate(var(--rot, 0deg));
-        opacity: 1;
-        visibility: visible;
-    }
+  0% {
+    transform: scale(0.6) rotate(var(--rot, 0deg));
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05) rotate(var(--rot, 0deg));
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(var(--rot, 0deg));
+    opacity: 1;
+    visibility: visible;
+  }
 }

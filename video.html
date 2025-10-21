@@ -3,22 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dos cineastas y medio — Invitación de Halloween</title>
+  <title>Dos cineastas y medio</title>
 
   <link rel="stylesheet" href="public/css/main.css">
   <link rel="stylesheet" href="public/css/reproductor.css">
 
   <style>
-    /* Inicialmente ocultar el contenedor del reproductor */
-    .player-container {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 1s ease;
-    }
-    .player-container.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
   </style>
 </head>
 
@@ -40,54 +30,36 @@
           <a href="#" id="mark-viewed" class="mark-btn">Marcar como vista</a>
           <a href="index.html" class="back-btn">Volver a la cartelera</a>
         </div>
+
+        <!-- Sistema de votación con dos usuarios -->
+        <div class="ratings-container">
+          <div class="rating-row">
+            <label class="subtitle cineasta">Cineasta 1:</label>
+            <div class="rating" id="rating1">
+              <img src="public/img/calabaza.png" data-value="5" alt="5 calabazas">
+              <img src="public/img/calabaza.png" data-value="4" alt="4 calabazas">
+              <img src="public/img/calabaza.png" data-value="3" alt="3 calabazas">
+              <img src="public/img/calabaza.png" data-value="2" alt="2 calabazas">
+              <img src="public/img/calabaza.png" data-value="1" alt="1 calabaza">
+            </div>
+          </div>
+
+          <div class="rating-row">
+            <label class="subtitle cineasta">Cineasta 2:</label>
+            <div class="rating" id="rating2">
+              <img src="public/img/calabaza.png" data-value="5" alt="5 calabazas">
+              <img src="public/img/calabaza.png" data-value="4" alt="4 calabazas">
+              <img src="public/img/calabaza.png" data-value="3" alt="3 calabazas">
+              <img src="public/img/calabaza.png" data-value="2" alt="2 calabazas">
+              <img src="public/img/calabaza.png" data-value="1" alt="1 calabaza">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script>
-      $(function() {
-        const params = new URLSearchParams(window.location.search);
-        const id = parseInt(params.get("id"));
-        const container = $("#player-container");
-        const vistas = JSON.parse(localStorage.getItem("peliculasVistas")) || {};
-
-      // Retrasar la aparición del reproductor
-        setTimeout(() => {
-          container.addClass("visible");
-        }, 4000);
-
-      // Cargar la base de datos
-        $.getJSON("bd.json", function(data) {
-          const pelicula = data.peliculas.find(p => p.id === id);
-
-          if (pelicula) {
-            $("#video-title").text(pelicula.nombre);
-          // Cambia la ruta por la ubicación real de tus videos
-            $("#video-source").attr("src", `videos/${pelicula.id}.mp4`);
-            $("#player")[0].load();
-
-          // Estado "vista"
-            if (vistas[id]) {
-              $("#mark-viewed").addClass("vista").text("🎃 Vista");
-            }
-
-          // Marcar como vista
-            $("#mark-viewed").on("click", function(e) {
-              e.preventDefault();
-              if (!$(this).hasClass("vista")) {
-                vistas[id] = true;
-                localStorage.setItem("peliculasVistas", JSON.stringify(vistas));
-                $(this).addClass("vista").text("🎃 Vista");
-              }
-            });
-          } else {
-            $("#video-title").text("Película no encontrada 😢");
-            $("#mark-viewed").hide();
-          }
-        });
-
-        $("body").addClass("show-animations");
-      });
-    </script>
+    <script src="public/js/video.js"></script>
+    <script src="public/js/voto.js"></script>
   </body>
   </html>

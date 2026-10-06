@@ -7,19 +7,19 @@
     font-style: normal;
     font-display: swap;
 }
-/* === Paleta Blanco y Negro === */
+/* === Paleta Halloween === */
 
 :root {
-    --bg: #000000;
-    --main: #ffffff;
-    /* Blanco */
-    --accent: #000000;
-    /* Negro */
-    --glow: rgba(255, 255, 255, 0.25);
-    /* Blanco */
-    --purple-light: #ffffff;
-    --purple-dark: #000000;
-    --text-secondary: #ffffff;
+    --bg: #050006;
+    --main: #ff7518;
+    /* Naranja calabaza */
+    --accent: #c21212;
+    /* Sangre */
+    --glow: rgba(0, 255, 100, 0.25);
+    /* Verde espectral */
+    --purple-light: #3a0ca3;
+    --purple-dark: #240046;
+    --text-secondary: #ffb46e;
 }
 /* === Reset y fondo === */
 
@@ -32,80 +32,16 @@ html, body {
     height: 100%;
 }
 body {
-    min-height: 100vh;
-    background: #000;
+    background: url("../img/fondo.jpg") center center / cover no-repeat fixed, radial-gradient(circle at 50% 20%, rgba(120, 0, 160, 0.08), transparent 65%), linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.20) 100%);
+    background-blend-mode: overlay;
     color: var(--main);
-
-    font-family:
-        system-ui,
-        -apple-system,
-        "Segoe UI",
-        Roboto,
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
-
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-
     padding: 3rem 2rem 2rem;
     overflow-x: hidden;
     position: relative;
-}
-
-
-/* =========================================================
-   FONDO EN BLANCO Y NEGRO
-   ========================================================= */
-
-body::before {
-    content: "";
-
-    position: fixed;
-    inset: 0;
-
-    z-index: -2;
-
-    background:
-        url("../img/fondo.jpg")
-        center center / cover no-repeat;
-
-    filter:
-        grayscale(100%)
-        contrast(1.15)
-        brightness(0.65);
-
-    transform: scale(1.02);
-}
-
-
-/* =========================================================
-   VIÑETA / OSCURECIMIENTO DE TERROR
-   ========================================================= */
-
-body::after {
-    content: "";
-
-    position: fixed;
-    inset: 0;
-
-    z-index: -1;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 50% 40%,
-            rgba(255, 255, 255, 0.04),
-            transparent 55%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.15) 0%,
-            rgba(0, 0, 0, 0.55) 70%,
-            rgba(0, 0, 0, 0.95) 100%
-        );
 }
 /* === Contenedor central === */
 
@@ -128,7 +64,7 @@ body::after {
     transform: rotate(-1.5deg);
     position: relative;
     color: var(--main);
-    text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.15), 0 0 30px rgba(255, 255, 255, 0.1);
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 117, 24, 0.2), 0 0 20px rgba(255, 80, 20, 0.15), 0 0 30px rgba(0, 255, 100, 0.1);
     opacity: 0;
     /* 🔹 Invisible al inicio */
 }
@@ -150,19 +86,19 @@ body::after {
 
 @keyframes title-flicker {
     0% {
-        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.15), 0 0 30px var(--glow);
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 117, 24, 0.2), 0 0 20px rgba(255, 80, 20, 0.15), 0 0 30px var(--glow);
     }
     25% {
-        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 20px rgba(255, 255, 255, 0.35), 0 0 35px rgba(255, 255, 255, 0.25), 0 0 50px var(--glow);
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 20px rgba(255, 117, 24, 0.35), 0 0 35px rgba(255, 80, 20, 0.25), 0 0 50px var(--glow);
     }
     50% {
-        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 30px rgba(255, 255, 255, 0.6), 0 0 55px rgba(255, 255, 255, 0.45), 0 0 80px var(--glow);
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 30px rgba(255, 117, 24, 0.6), 0 0 55px rgba(255, 80, 20, 0.45), 0 0 80px var(--glow);
     }
     75% {
-        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 20px rgba(255, 255, 255, 0.35), 0 0 35px rgba(255, 255, 255, 0.25), 0 0 50px var(--glow);
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 20px rgba(255, 117, 24, 0.35), 0 0 35px rgba(255, 80, 20, 0.25), 0 0 50px var(--glow);
     }
     100% {
-        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.15), 0 0 30px var(--glow);
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 117, 24, 0.2), 0 0 20px rgba(255, 80, 20, 0.15), 0 0 30px var(--glow);
     }
 }
 /* === Solo inicia tras el clic (cuando body tiene .show-animations) === */
@@ -188,7 +124,7 @@ body::after {
     /* tamaño responsive */
     z-index: 9999;
     cursor: pointer;
-    text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.15), 0 0 20px rgba(255, 255, 255, 0.1);
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(255, 117, 24, 0.2), 0 0 20px rgba(255, 80, 20, 0.15), 0 0 20px rgba(0, 255, 100, 0.1);
     animation: overlay-flicker 3s ease-in-out infinite;
     text-align: center;
     /* Centrado por defecto */
@@ -215,8 +151,8 @@ body::after {
     text-transform: uppercase;
     opacity: 0;
     transform: translateY(10px);
-    text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 25px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.35), 0 0 70px rgba(255, 255, 255, 0.25);
-    /* Blanco */
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 1), 0 0 25px rgba(255, 117, 24, 0.5), 0 0 40px rgba(255, 100, 20, 0.35), 0 0 70px rgba(49, 201, 80, 0.25);
+    /* Verde espectral */
 }
 .cineasta {
     position: relative;
@@ -276,7 +212,7 @@ body::after {
         opacity: 0.6;
     }
     .subtitle {
-        color: #fff;
+        color: #ffddb0;
     }
 }
 @media (max-width: 600px) {
@@ -289,4 +225,3 @@ body::after {
         margin-top: 0.3rem;
     }
 }
-```

@@ -7,6 +7,14 @@ $(window).on("load", function() {
         overlay.fadeOut(2000, function() {
             $(this).empty();
             $("body").addClass("show-animations");
+            // 🎃 REPRODUCIR AUDIO DESPUÉS DE LA FRASE
+            audio.play().catch(() => {
+                // Si el navegador bloquea el autoplay,
+                // esperar a una interacción del usuario
+                $(document).one("click", function() {
+                    audio.play();
+                });
+            });
         });
     }
     // === Mostrar frase con fadeIn/fadeOut ===
@@ -20,7 +28,7 @@ $(window).on("load", function() {
         }
         // --- Selección aleatoria no repetitiva ---
         if (frases_usadas.length === frases_terror.length) {
-            frases_usadas = []; // reiniciar cuando se usen todas
+            frases_usadas = [];
         }
         let fraseObj;
         do {
@@ -30,41 +38,29 @@ $(window).on("load", function() {
         frases_usadas.push(fraseObj.id);
         // --- Mostrar la frase ---
         overlay.html(`
-        <div id="frase-contenido" style="display:none;">
-            ${fraseObj.frase} ${fraseObj.emoji}
-            <cite>${fraseObj.pelicula}</cite>
-        </div>
+            <div id="frase-contenido" style="display:none;">
+                ${fraseObj.frase} ${fraseObj.emoji}
+                <cite>${fraseObj.pelicula}</cite>
+            </div>
         `);
         // --- Animaciones ---
         setTimeout(() => {
             $("#frase-contenido").fadeIn(1000, function() {
                 setTimeout(() => {
                     $("#frase-contenido").fadeOut(1000, function() {
+                        // Aquí comienza el fadeOut
+                        // del overlay y DESPUÉS
+                        // se reproduce el audio
                         hideOverlay();
                     });
                 }, 2000);
             });
         }, 2000);
-        // --- Intentar reproducir automáticamente ---
-        audio.play().catch(() => {
-            overlay.on("click", function() {
-                audio.play();
-                // Pantalla completa tras interacción
-                const docEl = document.documentElement;
-                if (docEl.requestFullscreen) {
-                    docEl.requestFullscreen();
-                } else if (docEl.webkitRequestFullscreen) {
-                    docEl.webkitRequestFullscreen();
-                } else if (docEl.msRequestFullscreen) {
-                    docEl.msRequestFullscreen();
-                }
-            });
-        });
+        // ❌ Se eliminó audio.play() de aquí
     });
     // === CARGAR PELÍCULAS Y LEER VISTAS DESDE localStorage ===
     $.getJSON("bd.json", function(data) {
         const peliculas = data.peliculas;
-        // Cargar objeto de vistas
         let vistas = {};
         try {
             const stored = JSON.parse(localStorage.getItem("peliculasVistas"));
@@ -77,16 +73,17 @@ $(window).on("load", function() {
         // Vaciar cartelera antes de volver a llenarla
         $("#cartelera").empty();
         peliculas.forEach((pelicula) => {
-            const vista = vistas[pelicula.id] === true; // ← Objeto {id: true}
+            const vista = vistas[pelicula.id] === true;
             const ticket = $(`
-            <a href="${pelicula.enlace}?id=${pelicula.id}" 
-               class="ticket ${vista ? "vista" : ""}" style="--i:${pelicula.id}">
-              <span>${pelicula.nombre}</span>
-            </a>
+                <a href="${pelicula.enlace}?id=${pelicula.id}"
+                   class="ticket ${vista ? "vista" : ""}"
+                   style="--i:${pelicula.id}">
+                    <span>${pelicula.nombre}</span>
+                </a>
             `);
             $("#cartelera").append(ticket);
         });
-        // 🎲 Aleatorizar inclinación con !important
+        // 🎲 Aleatorizar inclinación
         $("#cartelera .ticket").each(function() {
             const randomDeg = (Math.random() * 6 - 3).toFixed(1);
             const currentStyle = $(this).attr("style") || "";
@@ -97,10 +94,12 @@ $(window).on("load", function() {
     $(document).on("click", "a", function(e) {
         const url = $(this).attr("href");
         // Evitar roturas con enlaces especiales
-        if (!url || url.startsWith("#") || $(this).attr("target") === "_blank") return;
-        e.preventDefault(); // Bloquea la navegación instantánea
+        if (!url || url.startsWith("#") || $(this).attr("target") === "_blank") {
+            return;
+        }
+        e.preventDefault();
         $("body").fadeOut(1000, function() {
-            window.location.href = url; // Redirige después del fade
+            window.location.href = url;
         });
     });
 });

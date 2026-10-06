@@ -107,7 +107,7 @@
     }, {
         "id": 22,
         "frase": "No me duele... ¡Me quema, me lastima!",
-        "pelicula": "¿Y dónde está el fantasma?",
+        "pelicula": "¿Y dónde está el fantasma? 2",
         "emoji": "🔥"
     }, {
         "id": 23,
@@ -154,6 +154,11 @@
         "frase": "Ay iré a caminar un poco porqué yo puedo CA-MI-NAR",
         "pelicula": "Scary Movie 2",
         "emoji": "🚶🏼‍➡️"
+    }, {
+        "id": 32,
+        "frase": "Joder... eso si es de Gangsters!",
+        "pelicula": "¿Y dónde está el fantasma? 2",
+        "emoji": "🔥"
     }],
 "peliculas": [{
     "id": 1,
@@ -243,6 +248,21 @@
 }, {
     "id": 18,
     "nombre": "Scary Movie 3",
+    "enlace": "video.html",
+    "estado": 0
+}, {
+    "id": 19,
+    "nombre": "Scooby-Doo",
+    "enlace": "video.html",
+    "estado": 0
+}, {
+    "id": 20,
+    "nombre": "Scooby-Doo 2",
+    "enlace": "video.html",
+    "estado": 0
+}, {
+    "id": 21,
+    "nombre": "El joven manos de tijera",
     "enlace": "video.html",
     "estado": 0
 }]

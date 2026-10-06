@@ -1,269 +1,164 @@
 {
-    "frases_terror": [{
-        "id": 1,
-        "frase": "¿Alguna vez has soñado con una mejor versión de ti mismo?",
-        "pelicula": "La Sustancia",
-        "emoji": "🧪"
-    }, {
-        "id": 2,
-        "frase": "Taes ud cuchillo ?",
-        "pelicula": "Chucky - Temporada 2",
-        "emoji": "🔪"
-    }, {
-        "id": 3,
-        "frase": "No hay nada malo en tener miedo, Norman, siempre y cuando no dejes que te cambie quién eres",
-        "pelicula": "Paranorman",
-        "emoji": "👵🏼"
-    }, {
-        "id": 4,
-        "frase": "Los muertos nunca mueren, solo cambian",
-        "pelicula": "Paranorman",
-        "emoji": "💀"
-    }, {
-        "id": 5,
-        "frase": "Soy mago de medio tiempo. ¿Quieres ver un truco de magia?",
-        "pelicula": "El Teléfono Negro",
-        "emoji": "🎈"
-    }, {
-        "id": 6,
-        "frase": "Asegúrate de nunca, nunca gritar, O si no la lengua te va a cortar.",
-        "pelicula": "Dead Silence",
-        "emoji": "🔪👅"
-    }, {
-        "id": 7,
-        "frase": "Cuidado con la mirada de Mary Shaw",
-        "pelicula": "Dead Silence",
-        "emoji": "👀"
-    }, {
-        "id": 8,
-        "frase": "Si eres el Diablo, ¿por qué no haces desaparecer las correas?",
-        "pelicula": "El Exorcista",
-        "emoji": "👹"
-    }, {
-        "id": 9,
-        "frase": "Qué excelente día para un exorcismo",
-        "pelicula": "El Exorcista",
-        "emoji": "😈"
-    }, {
-        "id": 10,
-        "frase": "¡Aquí está Johnny!",
-        "pelicula": "El Resplandor",
-        "emoji": "🪓"
-    }, {
-        "id": 11,
-        "frase": "¡Quédate conmigo... para siempre!",
-        "pelicula": "El Resplandor",
-        "emoji": "❄️"
-    }, {
-        "id": 12,
-        "frase": "Juega con nosotros, Danny",
-        "pelicula": "El Resplandor",
-        "emoji": "🚲"
-    }, {
-        "id": 13,
-        "frase": "La descortesía me parece indescriptiblemente fea",
-        "pelicula": "Hannibal",
-        "emoji": "🍷"
-    }, {
-        "id": 14,
-        "frase": "Debo confesarte que estoy pensando muy seriamente... ¡en comerme a tu esposa!",
-        "pelicula": "Hannibal",
-        "emoji": "🍽️"
-    }, {
-        "id": 15,
-        "frase": "Pssst, hey, creo que se te cayó algo.",
-        "pelicula": "El Cadáver de la Novia",
-        "emoji": "👁️"
-    }, {
-        "id": 16,
-        "frase": "Tengo un enano, ¡y no dudaré en usarlo!",
-        "pelicula": "El Cadáver de la Novia",
-        "emoji": "🤵🏼"
-    }, {
-        "id": 17,
-        "frase": "¿Qué es esto? ¡Esto es Halloween!",
-        "pelicula": "El Extraño Mundo de Jack",
-        "emoji": "🎃"
-    }, {
-        "id": 18,
-        "frase": "En mi pueblo no celebramos la Navidad",
-        "pelicula": "El Extraño Mundo de Jack",
-        "emoji": "🎄"
-    }, {
-        "id": 19,
-        "frase": "Soy el Rey Calabaza",
-        "pelicula": "El Extraño Mundo de Jack",
-        "emoji": "👑"
-    }, {
-        "id": 20,
-        "frase": "¡Tic-tac-toe en tu cara!",
-        "pelicula": "¿Y dónde está el fantasma?",
-        "emoji": "🔪"
-    }, {
-        "id": 21,
-        "frase": "¡Mi perro es un panqueque!",
-        "pelicula": "¿Y dónde está el fantasma?",
-        "emoji": "🐶"
-    }, {
-        "id": 22,
-        "frase": "No me duele... ¡Me quema, me lastima!",
-        "pelicula": "¿Y dónde está el fantasma? 2",
-        "emoji": "🔥"
-    }, {
-        "id": 23,
-        "frase": "!Esta casa está viva!",
-        "pelicula": "Monster House",
-        "emoji": "🏚️"
-    }, {
-        "id": 24,
-        "frase": "No es una casa, es un monstruo",
-        "pelicula": "Monster House",
-        "emoji": "👹"
-    }, {
-        "id": 25,
-        "frase": "¿Óvulo?, Está monstruando",
-        "pelicula": "Monster House",
-        "emoji": "🏠"
-    }, {
-        "id": 26,
-        "frase": "Somos horribles y nos encanta",
-        "pelicula": "Los Locos Addams",
-        "emoji": "💀"
-    }, {
-        "id": 27,
-        "frase": "La normalidad es una ilusión!",
-        "pelicula": "Los Locos Addams",
-        "emoji": "🕷️"
-    }, {
-        "id": 28,
-        "frase": "Cuando tienes miedo pero lo haces de todos modos, eso es ser valiente",
-        "pelicula": "Coraline",
-        "emoji": "💪"
-    }, {
-        "id": 29,
-        "frase": "Los gatos no tenemos nombre",
-        "pelicula": "Coraline",
-        "emoji": "🐈‍⬛"
-    }, {
-        "id": 30,
-        "frase": "¡CORRE, PERRA! ¡CORRRREEEEEE!",
-        "pelicula": "Scary Movie",
-        "emoji": "🏃🏼💨"
-    }, {
-        "id": 31,
-        "frase": "Ay iré a caminar un poco porqué yo puedo CA-MI-NAR",
-        "pelicula": "Scary Movie 2",
-        "emoji": "🚶🏼‍➡️"
-    }, {
-        "id": 32,
-        "frase": "Joder... eso si es de Gangsters!",
-        "pelicula": "¿Y dónde está el fantasma? 2",
-        "emoji": "🔥"
-    }],
-"peliculas": [{
+  "frases_terror": [{
     "id": 1,
-    "nombre": "La Sustancia",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "En ocasiones veo muertos.",
+    "pelicula": "El Sexto Sentido",
+    "emoji": "👁️👻"
+  }, {
     "id": 2,
-    "nombre": "Paranorman",
-    "enlace": "video.html",
-    "estado": 1
-}, {
+    "frase": "Ahora estás en el Lugar Hundido.",
+    "pelicula": "Get Out",
+    "emoji": "☕🥄"
+  }, {
     "id": 3,
-    "nombre": "El Teléfono Negro",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "Tengo miedo de cerrar los ojos... y tengo miedo de abrirlos.",
+    "pelicula": "El proyecto de la bruja de Blair",
+    "emoji": "🌲📹"
+  }, {
     "id": 4,
-    "nombre": "Dead Silence",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "Todos flotan... y tú también flotarás.",
+    "pelicula": "It (Eso) de 1990",
+    "emoji": "🎈🤡"
+  }, {
     "id": 5,
-    "nombre": "El Exorcista",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "La Bestia ya está aquí.",
+    "pelicula": "Split",
+    "emoji": "🧠🪞"
+  }, {
     "id": 6,
-    "nombre": "El Resplandor",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "Hagas lo que hagas, no lo trates como humano.",
+    "pelicula": "Good Boy",
+    "emoji": "🐕🦴"
+  }, {
     "id": 7,
-    "nombre": "Hannibal",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "Gira la llave y verás lo que pasa. No es un juguete, es maligno.",
+    "pelicula": "The Monkey",
+    "emoji": "🐒🎵"
+  }, {
     "id": 8,
-    "nombre": "Together",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "Dame la pelota, Georgie.",
+    "pelicula": "It (Eso) de 1990",
+    "emoji": "🎈🌧️"
+  }, {
     "id": 9,
-    "nombre": "El Cadáver de la Novia",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "No voy a hacerte daño, Wendy... Solo voy a romperte los sesos.",
+    "pelicula": "El Resplandor",
+    "emoji": "🪓❄️"
+  }, {
     "id": 10,
-    "nombre": "El Extraño Mundo de Jack",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "La mente es una pizarra. El alcohol es el borrador.",
+    "pelicula": "Doctor Sueño",
+    "emoji": "🧠🍺"
+  }, {
     "id": 11,
-    "nombre": "¿Y dónde está el fantasma?",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "En el espacio, nadie puede oír tus gritos.",
+    "pelicula": "Alien: El Octavo Pasajero",
+    "emoji": "👽🚀"
+  }, {
     "id": 12,
-    "nombre": "¿Y dónde está el fantasma? 2",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "¿Estás bien? ¿Qué te pasó en la cara?",
+    "pelicula": "Brightburn",
+    "emoji": "🦸‍♂️🔴"
+  }, {
     "id": 13,
-    "nombre": "Monster House",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "El hombre toma un trago. La bebida toma un trago. Y entonces la bebida se lleva a un hombre.",
+    "pelicula": "Doctor Sueño",
+    "emoji": "🥃🏨"
+  }, {
     "id": 14,
-    "nombre": "Los Locos Addams",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "La gente muere. Es lo que hay. Palabra de Dios.",
+    "pelicula": "The Monkey",
+    "emoji": "🐒💀"
+  }, {
     "id": 15,
-    "nombre": "Coraline",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "Ingestión por A, pasando por B, a la excreción de C.",
+    "pelicula": "El Ciempiés Humano",
+    "emoji": "🐛🧪"
+  }, {
     "id": 16,
-    "nombre": "Scary Movie",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "Este es el mejor menú jamás creado... y todos morirán.",
+    "pelicula": "El menú",
+    "emoji": "🍽️🔪"
+  }, {
     "id": 17,
-    "nombre": "Scary Movie 2",
-    "enlace": "video.html",
-    "estado": 0
-}, {
+    "frase": "No es nuestro hijo. Es una cosa que encontramos en el bosque.",
+    "pelicula": "Brightburn",
+    "emoji": "👽🏠"
+  }, {
     "id": 18,
-    "nombre": "Scary Movie 3",
+    "frase": "¿Sabes qué tipo de plan nunca falla? Ningún plan.",
+    "pelicula": "Parásitos",
+    "emoji": "🪳🏠"
+  }],
+  "peliculas": [{
+    "id": 1,
+    "nombre": "El Sexto Sentido",
     "enlace": "video.html",
     "estado": 0
-}, {
-    "id": 19,
-    "nombre": "Scooby-Doo",
+  }, {
+    "id": 2,
+    "nombre": "Get Out",
     "enlace": "video.html",
     "estado": 0
-}, {
-    "id": 20,
-    "nombre": "Scooby-Doo 2",
+  }, {
+    "id": 3,
+    "nombre": "El proyecto de la bruja de Blair",
     "enlace": "video.html",
     "estado": 0
-}, {
-    "id": 21,
-    "nombre": "El joven manos de tijera",
+  }, {
+    "id": 4,
+    "nombre": "It (Eso) de 1990",
     "enlace": "video.html",
     "estado": 0
-}]
+  }, {
+    "id": 5,
+    "nombre": "Split",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 6,
+    "nombre": "Good Boy",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 7,
+    "nombre": "The Monkey",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 8,
+    "nombre": "Doctor Sueño",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 9,
+    "nombre": "Alien: El Octavo Pasajero",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 10,
+    "nombre": "Brightburn",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 11,
+    "nombre": "El Ciempiés Humano",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 12,
+    "nombre": "El menú",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 13,
+    "nombre": "Parásitos",
+    "enlace": "video.html",
+    "estado": 0
+  }, {
+    "id": 14,
+    "nombre": "The Boy",
+    "enlace": "video.html",
+    "estado": 0
+  }]
 }

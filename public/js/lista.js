@@ -3,12 +3,14 @@ $(function() {
     const ratingKey = "peliculasRatings";
     const ratings = JSON.parse(localStorage.getItem(ratingKey)) || {};
     const peliculas = data.peliculas;
-    const ranking = peliculas.map(p => {
-      const votos = ratings[p.id] || {
-        voto1: 0,
-        voto2: 0,
-        top1: 0
-      };
+    const topLista = $("#lista-top");
+    topLista.empty();
+    const ranking = peliculas.filter(p => {
+      const votos = ratings[p.id];
+            // Solo incluir películas que tengan alguna calificación
+      return votos && (votos.voto1 > 0 || votos.voto2 > 0 || votos.top1 === 1);
+    }).map(p => {
+      const votos = ratings[p.id];
             // El promedio SOLO tiene en cuenta voto1 y voto2
       const valores = [
         votos.voto1,
@@ -21,16 +23,18 @@ $(function() {
         top1: votos.top1 === 1
       };
     });
-        // 🏆 Primero siempre la película marcada como TOP 1
-        // Después, el resto se ordena por promedio
+        // Si no hay películas calificadas, no mostrar nada
+    if (ranking.length === 0) {
+      return;
+    }
+        // 🏆 Primero TOP 1
+        // Después, ordenar por promedio
     ranking.sort((a, b) => {
       if (a.top1 && !b.top1) return -1;
       if (!a.top1 && b.top1) return 1;
       return b.promedio - a.promedio;
     });
-    const topLista = $("#lista-top");
-    topLista.empty();
-        // 🏆 Mostrar solamente las primeras 5
+        // Mostrar solamente las primeras 5 calificadas
     ranking.slice(0, 5).forEach((p, index) => {
       const emoji = ["🥇", "🥈", "🥉", "🎖️", "🏅"][index];
       topLista.append(`

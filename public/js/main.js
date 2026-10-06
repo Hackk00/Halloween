@@ -2,7 +2,22 @@ $(window).on("load", function() {
     const audio = $("#halloween-audio")[0];
     const overlay = $("#audio-start");
     audio.volume = 0.1;
-    // === Función para ocultar overlay ===
+    // =====================================================
+    // 🖥️ PANTALLA COMPLETA AL HACER DOBLE CLIC
+    // =====================================================
+    overlay.on("dblclick", function() {
+        const docEl = document.documentElement;
+        if (docEl.requestFullscreen) {
+            docEl.requestFullscreen();
+        } else if (docEl.webkitRequestFullscreen) {
+            docEl.webkitRequestFullscreen();
+        } else if (docEl.msRequestFullscreen) {
+            docEl.msRequestFullscreen();
+        }
+    });
+    // =====================================================
+    // FUNCIÓN PARA OCULTAR OVERLAY
+    // =====================================================
     function hideOverlay() {
         overlay.fadeOut(2000, function() {
             $(this).empty();
@@ -17,7 +32,9 @@ $(window).on("load", function() {
             });
         });
     }
-    // === Mostrar frase con fadeIn/fadeOut ===
+    // =====================================================
+    // MOSTRAR FRASE CON FADEIN / FADEOUT
+    // =====================================================
     let frases_usadas = [];
     $.getJSON("bd.json", function(data) {
         const frases_terror = data.frases_terror;
@@ -26,7 +43,9 @@ $(window).on("load", function() {
             hideOverlay();
             return;
         }
-        // --- Selección aleatoria no repetitiva ---
+        // =================================================
+        // SELECCIÓN ALEATORIA NO REPETITIVA
+        // =================================================
         if (frases_usadas.length === frases_terror.length) {
             frases_usadas = [];
         }
@@ -36,14 +55,25 @@ $(window).on("load", function() {
             fraseObj = frases_terror[index];
         } while (frases_usadas.includes(fraseObj.id));
         frases_usadas.push(fraseObj.id);
-        // --- Mostrar la frase ---
+        // =================================================
+        // MOSTRAR LA FRASE
+        // =================================================
         overlay.html(`
+
             <div id="frase-contenido" style="display:none;">
+
                 ${fraseObj.frase} ${fraseObj.emoji}
-                <cite>${fraseObj.pelicula}</cite>
+
+                <cite>
+                    ${fraseObj.pelicula}
+                </cite>
+
             </div>
+
         `);
-        // --- Animaciones ---
+        // =================================================
+        // ANIMACIONES
+        // =================================================
         setTimeout(() => {
             $("#frase-contenido").fadeIn(1000, function() {
                 setTimeout(() => {
@@ -56,11 +86,16 @@ $(window).on("load", function() {
                 }, 2000);
             });
         }, 2000);
-        // ❌ Se eliminó audio.play() de aquí
     });
-    // === CARGAR PELÍCULAS Y LEER VISTAS DESDE localStorage ===
+    // =====================================================
+    // CARGAR PELÍCULAS Y LEER VISTAS
+    // DESDE localStorage
+    // =====================================================
     $.getJSON("bd.json", function(data) {
         const peliculas = data.peliculas;
+        // =================================================
+        // CARGAR OBJETO DE VISTAS
+        // =================================================
         let vistas = {};
         try {
             const stored = JSON.parse(localStorage.getItem("peliculasVistas"));
@@ -70,27 +105,42 @@ $(window).on("load", function() {
         } catch (e) {
             vistas = {};
         }
-        // Vaciar cartelera antes de volver a llenarla
+        // =================================================
+        // VACIAR CARTELERA
+        // =================================================
         $("#cartelera").empty();
+        // =================================================
+        // CREAR TICKETS
+        // =================================================
         peliculas.forEach((pelicula) => {
             const vista = vistas[pelicula.id] === true;
             const ticket = $(`
-                <a href="${pelicula.enlace}?id=${pelicula.id}"
-                   class="ticket ${vista ? "vista" : ""}"
-                   style="--i:${pelicula.id}">
-                    <span>${pelicula.nombre}</span>
+                <a
+                    href="${pelicula.enlace}?id=${pelicula.id}"
+                    class="ticket ${vista ? "vista" : ""}"
+                    style="--i:${pelicula.id}"
+                >
+
+                    <span>
+                        ${pelicula.nombre}
+                    </span>
+
                 </a>
             `);
             $("#cartelera").append(ticket);
         });
-        // 🎲 Aleatorizar inclinación
+        // =================================================
+        // 🎲 ALEATORIZAR INCLINACIÓN
+        // =================================================
         $("#cartelera .ticket").each(function() {
             const randomDeg = (Math.random() * 6 - 3).toFixed(1);
             const currentStyle = $(this).attr("style") || "";
             $(this).attr("style", currentStyle + `; --rot:${randomDeg}deg !important`);
         });
     });
-    // === EFECTO DESVANECER CUANDO SE CLICKEA UN ENLACE ===
+    // =====================================================
+    // EFECTO DESVANECER AL CLICKEAR UN ENLACE
+    // =====================================================
     $(document).on("click", "a", function(e) {
         const url = $(this).attr("href");
         // Evitar roturas con enlaces especiales

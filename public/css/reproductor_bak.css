@@ -1,0 +1,195 @@
+.player-container {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+.player-container.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.player-container {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--main);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 0 25px rgba(255, 117, 24, 0.25);
+    text-align: center;
+    margin-top: 2rem;
+    /* 🔹 Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    /* 🔹 Animación que inicia 3s después */
+    animation: zoomIn 1.5s ease forwards;
+    animation-delay: 3.5s;
+}
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    outline: none;
+    background-color: black;
+}
+.video-title {
+    font-family: "Spooky", serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--main);
+    text-shadow: 0 4px 15px rgba(255, 117, 24, 0.4);
+    letter-spacing: 0.05em;
+    /* 🔹 Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    animation: zoomIn 2s ease forwards;
+    animation-delay: 2s;
+}
+.back-btn, .mark-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: "Spooky", serif;
+    border: 2px solid var(--main);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    background: transparent;
+    /* 🔹 Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 3s;
+}
+.back-btn:hover, .mark-btn:hover {
+    background: var(--main);
+    color: #000;
+    box-shadow: 0 0 15px var(--glow);
+}
+.mark-btn.vista {
+    background: var(--main);
+    color: #000;
+    box-shadow: 0 0 15px var(--glow);
+    cursor: default;
+}
+/*------------------VOTACIONES-----------------------*/
+
+.ratings-container {
+    margin-top: 2%;
+}
+.rating {
+    direction: rtl;
+    display: inline-flex;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+.rating img {
+    width: 35px;
+    opacity: 0.4;
+    filter: grayscale(100%);
+    transition: opacity 0.2s, transform 0.2s, filter 0.2s;
+}
+/* Hover antes de votar */
+
+.rating img:hover, .rating img:hover~img {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+/* Solo las seleccionadas quedan encendidas */
+
+.rating .selected {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+/* Estado bloqueado tras votar */
+
+.rating.disabled img {
+    cursor: default;
+    transform: none !important;
+    pointer-events: none;
+}
+/*-----------------------------------------*/
+
+/* =========================================
+   BOTÓN TOP 1
+========================================= */
+
+.top-container {
+    margin-top: 20px;
+}
+.top-vote {
+    font-family: "Spooky", serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: #050505;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #777;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.top-icon {
+    font-size: 22px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+/* Hover */
+
+.top-vote:hover {
+    color: white;
+    border-color: white;
+    background: #111;
+    transform: translateY(-2px);
+}
+/* Seleccionado */
+
+.top-vote.selected {
+    color: white;
+    border-color: white;
+    background: #111;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+.top-vote.selected .top-icon {
+    opacity: 1;
+    filter: grayscale(100%);
+}
+#top1Button.selected {
+    background: #E7E5E4;
+}
+/*-----------------------------------------*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.6) rotate(var(--rot, 0deg));
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.05) rotate(var(--rot, 0deg));
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(var(--rot, 0deg));
+        opacity: 1;
+        visibility: visible;
+    }
+}

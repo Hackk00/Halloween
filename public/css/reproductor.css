@@ -1,80 +1,135 @@
-.player-container {
+/* =========================================================
+   🎬 REPRODUCTOR — TERROR / SANGRE
+   ========================================================= */
+
+   .player-container {
     opacity: 0;
     pointer-events: none;
     transition: opacity 1s ease;
+    width: 100%;
+    background: linear-gradient( 145deg, rgba(25, 25, 25, 0.96), rgba(3, 3, 3, 0.98));
+    border: 2px solid rgba(130, 0, 0, 0.75);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.95), 0 0 15px rgba(100, 0, 0, 0.4), inset 0 0 30px rgba(0, 0, 0, 0.95);
+    text-align: center;
+    margin-top: 2rem;
+    /* 🔹 Oculto por defecto */
+    visibility: hidden;
+    /* 🔹 Animación que inicia 3s después */
+    animation: zoomIn 1.5s ease forwards;
+    animation-delay: 3.5s;
+    position: relative;
+    overflow: hidden;
+}
+/* 🩸 Manchas de sangre */
+
+.player-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient( ellipse at 8% 0%, rgba(100, 0, 0, 0.75) 0%, rgba(55, 0, 0, 0.35) 18%, transparent 40%), radial-gradient( ellipse at 95% 80%, rgba(90, 0, 0, 0.7) 0%, rgba(50, 0, 0, 0.3) 20%, transparent 42%), radial-gradient( circle at 20% 70%, rgba(120, 0, 0, 0.7) 0%, transparent 3%), radial-gradient( circle at 75% 20%, rgba(110, 0, 0, 0.65) 0%, transparent 3%);
+    opacity: 0.7;
+    mix-blend-mode: multiply;
+    filter: blur(1px);
+}
+/* 🩸 Gotas superiores */
+
+.player-container::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 10%;
+    width: 7px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 1;
+    background: linear-gradient( to bottom, rgba(120, 0, 0, 0.95), rgba(65, 0, 0, 0.8), transparent);
+    border-radius: 0 0 50% 50%;
+    box-shadow: 25px 5px 0 -2px rgba(90, 0, 0, 0.75), 65px 2px 0 -3px rgba(110, 0, 0, 0.7), 120px 9px 0 -2px rgba(80, 0, 0, 0.7), 175px 4px 0 -3px rgba(100, 0, 0, 0.65);
+    opacity: 0.8;
+    filter: blur(0.4px);
 }
 .player-container.visible {
     opacity: 1;
     pointer-events: auto;
 }
-.player-container {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid var(--main);
-    border-radius: 16px;
-    padding: 1rem;
-    box-shadow: 0 0 25px rgba(255, 117, 24, 0.25);
-    text-align: center;
-    margin-top: 2rem;
-    /* 🔹 Oculto por defecto */
-    opacity: 0;
-    visibility: hidden;
-    /* 🔹 Animación que inicia 3s después */
-    animation: zoomIn 1.5s ease forwards;
-    animation-delay: 3.5s;
-}
-video {
+/* =========================================================
+   🎥 VIDEO
+   ========================================================= */
+
+   video {
     width: 100%;
     height: auto;
     border-radius: 10px;
     outline: none;
     background-color: black;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.95), 0 0 10px rgba(100, 0, 0, 0.25);
 }
-.video-title {
+/* =========================================================
+   🎬 TÍTULO
+   ========================================================= */
+
+   .video-title {
     font-family: "Spooky", serif;
     font-size: clamp(1.8rem, 5vw, 3rem);
     margin-bottom: 1rem;
-    color: var(--main);
-    text-shadow: 0 4px 15px rgba(255, 117, 24, 0.4);
+    color: #eeeeee;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9), 0 0 12px rgba(120, 0, 0, 0.4);
     letter-spacing: 0.05em;
     /* 🔹 Oculto por defecto */
     opacity: 0;
     visibility: hidden;
     animation: zoomIn 2s ease forwards;
     animation-delay: 2s;
+    position: relative;
+    z-index: 5;
 }
-.back-btn, .mark-btn {
+/* =========================================================
+   🔙 BOTONES
+   ========================================================= */
+
+   .back-btn, .mark-btn {
     display: inline-block;
     margin-top: 1.5rem;
-    color: var(--text-secondary);
+    color: #eeeeee;
     text-decoration: none;
     font-family: "Spooky", serif;
-    border: 2px solid var(--main);
+    border: 2px solid rgba(130, 0, 0, 0.75);
     padding: 0.5rem 1rem;
     border-radius: 10px;
     transition: 0.3s;
     cursor: pointer;
-    background: transparent;
+    background: linear-gradient( 145deg, rgba(25, 25, 25, 0.95), rgba(3, 3, 3, 0.98));
     /* 🔹 Oculto por defecto */
     opacity: 0;
     visibility: hidden;
     animation: fadeIn 1.5s ease forwards;
     animation-delay: 3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8), inset 0 0 12px rgba(0, 0, 0, 0.8);
 }
 .back-btn:hover, .mark-btn:hover {
-    background: var(--main);
-    color: #000;
-    box-shadow: 0 0 15px var(--glow);
+    background: linear-gradient( 145deg, #eeeeee, #bdbdbd);
+    color: #050505;
+    border-color: #eeeeee;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25), 0 0 20px rgba(100, 0, 0, 0.35);
 }
 .mark-btn.vista {
-    background: var(--main);
+    background: linear-gradient( 145deg, #eeeeee, #bdbdbd);
     color: #000;
-    box-shadow: 0 0 15px var(--glow);
+    border-color: #eeeeee;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
     cursor: default;
 }
-/*------------------VOTACIONES-----------------------*/
+/* =========================================================
+   🩸 VOTACIONES
+   ========================================================= */
 
-.ratings-container {
+   .ratings-container {
     margin-top: 2%;
 }
 .rating {
@@ -86,21 +141,22 @@ video {
 .rating img {
     width: 35px;
     opacity: 0.4;
-    filter: grayscale(100%);
+    filter: grayscale(100%) brightness(0.65);
     transition: opacity 0.2s, transform 0.2s, filter 0.2s;
 }
 /* Hover antes de votar */
 
 .rating img:hover, .rating img:hover~img {
     opacity: 1;
-    filter: grayscale(0%);
+    filter: grayscale(0%) brightness(1);
     transform: scale(1.1);
 }
 /* Solo las seleccionadas quedan encendidas */
 
 .rating .selected {
     opacity: 1;
-    filter: grayscale(0%);
+    filter: grayscale(0%) brightness(1);
+    filter: drop-shadow(0 0 5px rgba(120, 0, 0, 0.8));
 }
 /* Estado bloqueado tras votar */
 
@@ -109,13 +165,11 @@ video {
     transform: none !important;
     pointer-events: none;
 }
-/*-----------------------------------------*/
+/* =========================================================
+   🏆 BOTÓN TOP 1
+   ========================================================= */
 
-/* =========================================
-   BOTÓN TOP 1
-========================================= */
-
-.top-container {
+   .top-container {
     margin-top: 20px;
 }
 .top-vote {
@@ -125,16 +179,16 @@ video {
     justify-content: center;
     gap: 8px;
     padding: 8px 18px;
-    background: #050505;
+    background: linear-gradient( 145deg, #111111, #030303);
     border: 1px solid #444;
     border-radius: 5px;
     color: #777;
-    font-family: inherit;
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 1px;
     cursor: pointer;
     transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
 }
 .top-icon {
     font-size: 22px;
@@ -146,27 +200,33 @@ video {
 .top-vote:hover {
     color: white;
     border-color: white;
-    background: #111;
+    background: linear-gradient( 145deg, #1a1a1a, #080808);
     transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15), 0 0 10px rgba(100, 0, 0, 0.35);
 }
 /* Seleccionado */
 
 .top-vote.selected {
     color: white;
-    border-color: white;
-    background: #111;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+    border-color: #eeeeee;
+    background: linear-gradient( 145deg, #eeeeee, #bdbdbd);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.35), 0 0 15px rgba(100, 0, 0, 0.3);
 }
 .top-vote.selected .top-icon {
     opacity: 1;
     filter: grayscale(100%);
 }
+/* TOP 1 seleccionado */
+
 #top1Button.selected {
     background: #E7E5E4;
+    color: #050505;
 }
-/*-----------------------------------------*/
+/* =========================================================
+   🎞️ ANIMACIONES
+   ========================================================= */
 
-@keyframes fadeIn {
+   @keyframes fadeIn {
     0% {
         opacity: 0;
         transform: translateY(15px);

@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Spooky";
-    src: url("../fonts/spooky.otf") format("opentype");
+    src: url("../fonts/28.ttf") format("opentype");
     font-weight: 400 900;
     font-style: normal;
     font-display: swap;
@@ -35,77 +35,38 @@ body {
     min-height: 100vh;
     background: #000;
     color: var(--main);
-
-    font-family:
-        system-ui,
-        -apple-system,
-        "Segoe UI",
-        Roboto,
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
-
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-
     padding: 3rem 2rem 2rem;
     overflow-x: hidden;
     position: relative;
 }
-
-
 /* =========================================================
    FONDO EN BLANCO Y NEGRO
    ========================================================= */
 
 body::before {
     content: "";
-
     position: fixed;
     inset: 0;
-
     z-index: -2;
-
-    background:
-        url("../img/fondo.jpg")
-        center center / cover no-repeat;
-
-    filter:
-        grayscale(100%)
-        contrast(1.15)
-        brightness(0.65);
-
+    background: url("../img/fondo2.jpg") center center / cover no-repeat;
+    filter: grayscale(100%) contrast(1.15) brightness(0.65);
     transform: scale(1.02);
 }
-
-
 /* =========================================================
    VIÑETA / OSCURECIMIENTO DE TERROR
    ========================================================= */
 
 body::after {
     content: "";
-
     position: fixed;
     inset: 0;
-
     z-index: -1;
-
     pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 50% 40%,
-            rgba(255, 255, 255, 0.04),
-            transparent 55%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.15) 0%,
-            rgba(0, 0, 0, 0.55) 70%,
-            rgba(0, 0, 0, 0.95) 100%
-        );
+    background: radial-gradient( circle at 50% 40%, rgba(255, 255, 255, 0.04), transparent 55%), linear-gradient( 180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 70%, rgba(0, 0, 0, 0.95) 100%);
 }
 /* === Contenedor central === */
 
@@ -289,4 +250,3 @@ body::after {
         margin-top: 0.3rem;
     }
 }
-```

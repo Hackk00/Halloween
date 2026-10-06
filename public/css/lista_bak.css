@@ -1,0 +1,105 @@
+/* 🌒 Por defecto: Oculto */
+
+.top-flotante {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(10, 0, 20, 0.85);
+    border: 2px solid var(--main);
+    border-radius: 1rem;
+    padding: 1rem 1.2rem;
+    color: var(--text-secondary);
+    width: 240px;
+    font-family: "Spooky", serif;
+    z-index: 999;
+    box-shadow: 0 0 15px rgba(255, 117, 24, 0.4), 0 0 8px rgba(0, 255, 100, 0.15);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    /* No interactúa antes de aparecer */
+    transform: translateY(-10px);
+}
+/* Título */
+
+.top-flotante h3 {
+    font-size: 1.2rem;
+    color: var(--main);
+    margin-bottom: 0.7rem;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(255, 117, 24, 0.4), 0 0 15px rgba(0, 255, 100, 0.2);
+    letter-spacing: 0.05em;
+}
+/* Lista */
+
+.top-flotante ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.top-flotante li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(255, 117, 24, 0.3);
+    padding-bottom: 0.3rem;
+}
+.top-flotante li span {
+    color: var(--main);
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 0 0 6px rgba(255, 117, 24, 0.4);
+}
+/* === Adaptación móvil === */
+
+@media (max-width: 850px) {
+    .top-flotante {
+        position: relative;
+        /* ✅ Ahora se integra al flujo del contenido */
+        top: auto;
+        right: auto;
+        left: auto;
+        bottom: auto;
+        width: 90%;
+        margin: 2rem auto 1rem auto;
+        background: rgba(0, 0, 0, 0.8);
+        border: 2px solid orange;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 0 10px orange;
+        font-size: 0.9rem;
+        text-align: center;
+        z-index: auto;
+        /* No se superpone a nada */
+    }
+    .top-flotante h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .top-flotante li {
+        font-size: 0.9rem;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}
+/* 🕯️ Animación solo cuando el body tiene show-animations */
+
+body.show-animations .top-flotante {
+    animation: fadeInList 2s ease forwards;
+    animation-delay: 7s;
+    /* Espera 7s después de desaparecer el overlay */
+    pointer-events: all;
+}
+/* ✨ FadeIn suave */
+
+@keyframes fadeInList {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

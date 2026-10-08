@@ -31,7 +31,7 @@
     "emoji": "🐕🦴"
   }, {
     "id": 7,
-    "frase": "Gira la llave y verás lo que pasa. No es un juguete, es maligno.",
+    "frase": "Gira la llave y verás lo que pasa.",
     "pelicula": "The Monkey",
     "emoji": "🐒🎵"
   }, {
@@ -41,124 +41,204 @@
     "emoji": "🎈🌧️"
   }, {
     "id": 9,
-    "frase": "No voy a hacerte daño, Wendy... Solo voy a romperte los sesos.",
-    "pelicula": "El Resplandor",
-    "emoji": "🪓❄️"
+    "frase": "La mente es una pizarra, y esta es la goma de borrar.",
+    "pelicula": "Doctor Sueño",
+    "emoji": "🧠🧼"
   }, {
     "id": 10,
-    "frase": "La mente es una pizarra. El alcohol es el borrador.",
-    "pelicula": "Doctor Sueño",
-    "emoji": "🧠🍺"
-  }, {
-    "id": 11,
     "frase": "En el espacio, nadie puede oír tus gritos.",
     "pelicula": "Alien: El Octavo Pasajero",
     "emoji": "👽🚀"
   }, {
-    "id": 12,
+    "id": 11,
     "frase": "¿Estás bien? ¿Qué te pasó en la cara?",
     "pelicula": "Brightburn",
     "emoji": "🦸‍♂️🔴"
   }, {
-    "id": 13,
-    "frase": "El hombre toma un trago. La bebida toma un trago. Y entonces la bebida se lleva a un hombre.",
-    "pelicula": "Doctor Sueño",
-    "emoji": "🥃🏨"
-  }, {
-    "id": 14,
-    "frase": "La gente muere. Es lo que hay. Palabra de Dios.",
+    "id": 12,
+    "frase": "La gente muere. Es lo que hay.",
     "pelicula": "The Monkey",
     "emoji": "🐒💀"
   }, {
-    "id": 15,
-    "frase": "Ingestión por A, pasando por B, a la excreción de C.",
+    "id": 13,
+    "frase": "Ingestión por A, pasando por B, hasta la excreción de C.",
     "pelicula": "El Ciempiés Humano",
     "emoji": "🐛🧪"
   }, {
-    "id": 16,
-    "frase": "Este es el mejor menú jamás creado... y todos morirán.",
+    "id": 14,
+    "frase": "Acepten que van a morir... todos moriremos esta noche.",
     "pelicula": "El menú",
     "emoji": "🍽️🔪"
   }, {
-    "id": 17,
+    "id": 15,
     "frase": "No es nuestro hijo. Es una cosa que encontramos en el bosque.",
     "pelicula": "Brightburn",
     "emoji": "👽🏠"
   }, {
-    "id": 18,
+    "id": 16,
     "frase": "¿Sabes qué tipo de plan nunca falla? Ningún plan.",
     "pelicula": "Parásitos",
     "emoji": "🪳🏠"
+  }, {
+    "id": 17,
+    "frase": "No puedes escapar de lo que eres.",
+    "pelicula": "The Boy",
+    "emoji": "🧸👁️"
+  }, {
+    "id": 18,
+    "frase": "Él no es un muñeco. Él es Brahms.",
+    "pelicula": "The Boy",
+    "emoji": "🧸🏚️"
+  }, {
+    "id": 19,
+    "frase": "Todos tenemos un monstruo dentro.",
+    "pelicula": "Split",
+    "emoji": "🧠👹"
+  }, {
+    "id": 20,
+    "frase": "No importa cuántas veces muera, siempre vuelve.",
+    "pelicula": "The Monkey",
+    "emoji": "🐒💀"
+  }, {
+    "id": 21,
+    "frase": "A veces la familia puede ser el verdadero monstruo.",
+    "pelicula": "Parásitos",
+    "emoji": "🏠🪳"
+  }, {
+    "id": 22,
+    "frase": "No hay nada más peligroso que alguien que no tiene miedo.",
+    "pelicula": "Brightburn",
+    "emoji": "🦸‍♂️😈"
+  }, {
+    "id": 23,
+    "frase": "El miedo puede llevarte a lugares muy oscuros.",
+    "pelicula": "El proyecto de la bruja de Blair",
+    "emoji": "🌲🌑"
+  }, {
+    "id": 24,
+    "frase": "No estás solo en la oscuridad.",
+    "pelicula": "Alien: El Octavo Pasajero",
+    "emoji": "👽🌑"
+  }, {
+    "id": 25,
+    "frase": "Todos tienen un precio. Incluso la muerte.",
+    "pelicula": "El menú",
+    "emoji": "🍽️💀"
+  }, {
+    "id": 26,
+    "frase": "Una sola decisión puede cambiarlo todo.",
+    "pelicula": "Get Out",
+    "emoji": "☕👁️"
+  }, {
+    "id": 27,
+    "frase": "La oscuridad siempre encuentra una forma de entrar.",
+    "pelicula": "Doctor Sueño",
+    "emoji": "🚪🌑"
+  }, {
+    "id": 28,
+    "frase": "Hay cosas que es mejor dejar descansar.",
+    "pelicula": "Sweeney Todd",
+    "emoji": "💈🪒"
+  }, {
+    "id": 29,
+    "frase": "Una navaja puede cambiarlo todo.",
+    "pelicula": "Sweeney Todd",
+    "emoji": "💈🔪"
+  }, {
+    "id": 30,
+    "frase": "El payaso nunca deja de sonreír.",
+    "pelicula": "Terrifier",
+    "emoji": "🤡🔪"
+  }, {
+    "id": 31,
+    "frase": "No necesitas palabras para saber lo que va a pasar.",
+    "pelicula": "Terrifier",
+    "emoji": "🤡🩸"
+  }, {
+    "id": 32,
+    "frase": "El mal puede aparecer donde menos lo esperas.",
+    "pelicula": "Good Boy",
+    "emoji": "🐕👹"
   }],
-  "peliculas": [{
-    "id": 1,
-    "nombre": "El Sexto Sentido",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 2,
-    "nombre": "Get Out",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 3,
-    "nombre": "El proyecto de la bruja de Blair",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 4,
-    "nombre": "It (Eso) de 1990",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 5,
-    "nombre": "Split",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 6,
-    "nombre": "Good Boy",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 7,
-    "nombre": "The Monkey",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 8,
-    "nombre": "Doctor Sueño",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 9,
-    "nombre": "Alien: El Octavo Pasajero",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 10,
-    "nombre": "Brightburn",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 11,
-    "nombre": "El Ciempiés Humano",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 12,
-    "nombre": "El menú",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 13,
-    "nombre": "Parásitos",
-    "enlace": "video.html",
-    "estado": 0
-  }, {
-    "id": 14,
-    "nombre": "The Boy",
-    "enlace": "video.html",
-    "estado": 0
-  }]
+"peliculas": [{
+  "id": 1,
+  "nombre": "El Sexto Sentido",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 2,
+  "nombre": "Get Out",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 3,
+  "nombre": "El proyecto de la bruja de Blair",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 4,
+  "nombre": "It 1990",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 5,
+  "nombre": "Split",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 6,
+  "nombre": "Good Boy",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 7,
+  "nombre": "The Monkey",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 8,
+  "nombre": "Doctor Sueño",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 9,
+  "nombre": "Alien: El Octavo Pasajero",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 10,
+  "nombre": "Brightburn",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 11,
+  "nombre": "El Ciempiés Humano",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 12,
+  "nombre": "El menú",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 13,
+  "nombre": "Parásitos",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 14,
+  "nombre": "The Boy",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 15,
+  "nombre": "Sweeney Todd",
+  "enlace": "video.html",
+  "estado": 0
+}, {
+  "id": 16,
+  "nombre": "Terrifier",
+  "enlace": "video.html",
+  "estado": 0
+}]
 }
